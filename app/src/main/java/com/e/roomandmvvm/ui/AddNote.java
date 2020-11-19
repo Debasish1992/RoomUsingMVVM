@@ -40,12 +40,7 @@ public class AddNote extends AppCompatActivity {
         etPriority = findViewById(R.id.etNotePriority);
         btnSaveNote = findViewById(R.id.btnSaveNote);
 
-        btnSaveNote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateUserInputs();
-            }
-        });
+        btnSaveNote.setOnClickListener(v -> validateUserInputs());
 
         Intent intent = getIntent();
         if(intent.hasExtra(AddNote.EXTRA_ID)){

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements
         NoteAdapter adapter = new NoteAdapter();
         rv.setAdapter(adapter);
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
-        noteViewModel.getAllNotes().observe(this, notes -> adapter.setAllNotes(notes));
+        noteViewModel.getAllNotes().observe(this, notes -> adapter.submitList(notes));
         fabAddNotes.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this,
                     AddNote.class);
